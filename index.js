@@ -7,6 +7,6 @@ express()
   /*.get("/*", (req, res) => {
     if (req.path != "johanFavicon.png") res.sendFile(req.path, {root: path.join(__dirname, "accessible")});
   })*/
-  .get("/testing.html", (req, res) => res.send("HEJ"))
+  .get("/testing", (req, res) => res.send("HEJ"))
 
   .listen(port);
