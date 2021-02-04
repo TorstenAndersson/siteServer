@@ -5,6 +5,6 @@ const port = process.env.PORT;
 express()
   .use(cors({options: "https://xenodochial-varahamihira-6786dc.netlify.app/"}))
 
-  .get("/", (req, res) => res.send("<html><body><h1>NOW READING FROM HERE</h1></body></html>"))
+  .get("/", (req, res) => res.send(req))
 
   .listen(port);
