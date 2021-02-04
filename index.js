@@ -4,6 +4,6 @@ const path = require('path');
 const fetch = require('node-fetch');
 const port = process.env.PORT;
 express()
-  .get("/", (req, res) => res.sendFile("./index.html", {root: path.join(__dirname)}))
+  .get("/*", (req, res) => res.sendFile(req.path, {root: path.join(__dirname)}))
 
   .listen(port);
