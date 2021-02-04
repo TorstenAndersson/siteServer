@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 const port = process.env.PORT;
 express()
   .get("/*", (req, res) => {
-    if (req.path != "johanFavicon.png") res.sendFile(req.path, {root: path.join(__dirname, "accessible")});
+    res.sendFile(req.path, {root: path.join(__dirname, "accessible")});
   })
 
   .listen(port);
