@@ -1,0 +1,13 @@
+{
+  "name": "myapp",
+  "description": "a really cool app",
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "cors": "^2.8.5",
+    "node-fetch": "^2.6.1"
+  }
+}
