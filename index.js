@@ -13,7 +13,7 @@ fs.readdirSync("./accessible/").forEach(file => {
   files.append(file);
 });
 */
-files = fs.readdirSync("./accessibl/");
+files = fs.readdirSync("./accessible/");
 
 express()
   .get("/*", (req, res) => {
