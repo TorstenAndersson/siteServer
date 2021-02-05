@@ -7,10 +7,13 @@ const fetch = require("node-fetch");
 const port = process.env.PORT;
 
 var files;
+/*
 fs.readdirSync("./accessible/").forEach(file => {
   //const file = parse();
   files.append(file);
 });
+*/
+files = fs.readdirSync("./accessibl/");
 
 express()
   .get("/*", (req, res) => {
