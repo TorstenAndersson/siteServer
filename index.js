@@ -6,19 +6,21 @@ const parse = require("node-html-parser");
 const fetch = require("node-fetch");
 const port = process.env.PORT;
 
-var files;
-/*
+var files = "";
 fs.readdirSync("./accessible/").forEach(file => {
-  //const file = parse();
-  files.append(file);
+  const parsedContent = parse(fs.readFileSync("./" + file, "utf-8"));
+  parsedContent.querySelector("h1").innerHTML = "NEJ JAG HEJAR PÅ ER";
+  eval("var" + file + "=" + parsedContent)
+  //files.append(file);
 });
-*/
+/*
 files = fs.readdirSync("./accessible/");
 files = fs.readFileSync("./" + files[0], "utf-8");
+*/
 
 express()
   .get("/*", (req, res) => {
-    res.send(files);
+    res.send(index.js);
     //res.send("I DO WORK I SWEAR");
   })
 
