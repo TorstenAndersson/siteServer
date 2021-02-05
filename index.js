@@ -9,12 +9,13 @@ const port = process.env.PORT;
 var files = "";
 fs.readdirSync("./accessible/").forEach(file => {
   if (file.endsWith(".html")) {
-    const parsedContent = parser.parse(fs.readFileSync("./" + file, "utf-8"));
+    const parsedContent = parser.parse(fs.readFileSync("./" + file, "utf-8").replace("\n", ""));
     parsedContent.querySelector("h1").innerHTML = "NEJ JAG HEJAR PÅ ER";
     eval("var " + file.slice(0, -5) + '="' + parsedContent + '";')
   }
   //files.append(file);
 });
+
 /*
 files = fs.readdirSync("./accessible/");
 files = fs.readFileSync("./" + files[0], "utf-8");
