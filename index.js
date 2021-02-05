@@ -8,9 +8,11 @@ const port = process.env.PORT;
 
 var files = "";
 fs.readdirSync("./accessible/").forEach(file => {
-  const parsedContent = parser.parse(fs.readFileSync("./" + file, "utf-8"));
-  parsedContent.querySelector("h1").innerHTML = "NEJ JAG HEJAR PÅ ER";
-  eval("var" + file + "=" + parsedContent)
+  if (file.endsWith(".html")) {
+    const parsedContent = parser.parse(fs.readFileSync("./" + file, "utf-8"));
+    parsedContent.querySelector("h1").innerHTML = "NEJ JAG HEJAR PÅ ER";
+    eval("var " + file.slice(0, -5) + '="' + parsedContent + '";')
+  }
   //files.append(file);
 });
 /*
