@@ -2,13 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const path = require('path'); 
 const fs = require('fs');
-const parse = require("node-html-parser");
+const parser = require("node-html-parser");
 const fetch = require("node-fetch");
 const port = process.env.PORT;
 
 var files = "";
 fs.readdirSync("./accessible/").forEach(file => {
-  const parsedContent = parse(fs.readFileSync("./" + file, "utf-8"));
+  const parsedContent = parser.parse(fs.readFileSync("./" + file, "utf-8"));
   parsedContent.querySelector("h1").innerHTML = "NEJ JAG HEJAR PÅ ER";
   eval("var" + file + "=" + parsedContent)
   //files.append(file);
