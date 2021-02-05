@@ -14,6 +14,7 @@ fs.readdirSync("./accessible/").forEach(file => {
 });
 */
 files = fs.readdirSync("./accessible/");
+files = fs.readFileSync("./" + files[0], "utf-8");
 
 express()
   .get("/*", (req, res) => {
