@@ -11,7 +11,7 @@ fs.readdirSync("./accessible/").forEach(file => {
   if (file.endsWith(".html")) {
     const parsedContent = parser.parse(fs.readFileSync("./" + file, "utf-8").replace("\n", ""));
     parsedContent.querySelector("h1").innerHTML = "NEJ JAG HEJAR PÅ ER";
-    eval("var " + file.slice(0, -5) + '="' + parsedContent + '";')
+    eval("var " + file.slice(0, -5) + '="' + parsedContent.toString() + '";')
   }
   //files.append(file);
 });
