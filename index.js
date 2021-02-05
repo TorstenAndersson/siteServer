@@ -14,8 +14,8 @@ fs.readdirSync("./accessible/").forEach(file => {
 
 express()
   .get("/*", (req, res) => {
-    res.send(files);
-    //res.send("I DO WORK I SWEAR");
+    //res.send(files);
+    res.send("I DO WORK I SWEAR");
   })
 
   .listen(port);
